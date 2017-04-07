@@ -1,0 +1,873 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://pegjs.org/"
+
+    >pegjs (v0.10.0)</a>
+</h1>
+<h4>Parser generator for JavaScript</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pegjs">module pegjs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pegjs.GrammarError">
+            function <span class="apidocSignatureSpan">pegjs.</span>GrammarError
+            <span class="apidocSignatureSpan">(message, location)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pegjs.generate">
+            function <span class="apidocSignatureSpan">pegjs.</span>generate
+            <span class="apidocSignatureSpan">(grammar, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pegjs.parser.SyntaxError">
+            function <span class="apidocSignatureSpan">pegjs.</span>parser.SyntaxError
+            <span class="apidocSignatureSpan">(message, expected, found, location)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pegjs.</span>GrammarError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pegjs.</span>compiler</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pegjs.</span>compiler.visitor</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pegjs.</span>parser</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pegjs.</span>parser.SyntaxError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">pegjs.</span>VERSION</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pegjs.GrammarError">module pegjs.GrammarError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pegjs.GrammarError.GrammarError">
+            function <span class="apidocSignatureSpan">pegjs.</span>GrammarError
+            <span class="apidocSignatureSpan">(message, location)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pegjs.GrammarError.prototype">module pegjs.GrammarError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pegjs.GrammarError.prototype.constructor">
+            function <span class="apidocSignatureSpan">pegjs.GrammarError.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(message, location)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pegjs.compiler">module pegjs.compiler</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pegjs.compiler.compile">
+            function <span class="apidocSignatureSpan">pegjs.compiler.</span>compile
+            <span class="apidocSignatureSpan">(ast, passes, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pegjs.compiler.</span>passes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pegjs.compiler.</span>visitor</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pegjs.compiler.visitor">module pegjs.compiler.visitor</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pegjs.compiler.visitor.build">
+            function <span class="apidocSignatureSpan">pegjs.compiler.visitor.</span>build
+            <span class="apidocSignatureSpan">(functions)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pegjs.parser">module pegjs.parser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pegjs.parser.SyntaxError">
+            function <span class="apidocSignatureSpan">pegjs.parser.</span>SyntaxError
+            <span class="apidocSignatureSpan">(message, expected, found, location)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pegjs.parser.parse">
+            function <span class="apidocSignatureSpan">pegjs.parser.</span>parse
+            <span class="apidocSignatureSpan">(input, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pegjs.parser.SyntaxError">module pegjs.parser.SyntaxError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pegjs.parser.SyntaxError.SyntaxError">
+            function <span class="apidocSignatureSpan">pegjs.parser.</span>SyntaxError
+            <span class="apidocSignatureSpan">(message, expected, found, location)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pegjs.parser.SyntaxError.buildMessage">
+            function <span class="apidocSignatureSpan">pegjs.parser.SyntaxError.</span>buildMessage
+            <span class="apidocSignatureSpan">(expected, found)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pegjs.parser.SyntaxError.prototype">module pegjs.parser.SyntaxError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pegjs.parser.SyntaxError.prototype.constructor">
+            function <span class="apidocSignatureSpan">pegjs.parser.SyntaxError.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(message, expected, found, location)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pegjs" id="apidoc.module.pegjs">module pegjs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pegjs.GrammarError" id="apidoc.element.pegjs.GrammarError">
+        function <span class="apidocSignatureSpan">pegjs.</span>GrammarError
+        <span class="apidocSignatureSpan">(message, location)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GrammarError(message, location) {
+  this.name = &#x22;GrammarError&#x22;;
+  this.message = message;
+  this.location = location;
+
+  if (typeof Error.captureStackTrace === &#x22;function&#x22;) {
+    Error.captureStackTrace(this, GrammarError);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pegjs.generate" id="apidoc.element.pegjs.generate">
+        function <span class="apidocSignatureSpan">pegjs.</span>generate
+        <span class="apidocSignatureSpan">(grammar, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">generate = function (grammar, options) {
+  options = options !== void 0 ? options : {};
+
+  function convertPasses(passes) {
+    var converted = {}, stage;
+
+    for (stage in passes) {
+      if (passes.hasOwnProperty(stage)) {
+        converted[stage] = objects.values(passes[stage]);
+      }
+    }
+
+    return converted;
+  }
+
+  options = objects.clone(options);
+
+  var plugins = &#x22;plugins&#x22; in options ? options.plugins : [],
+      config  = {
+        parser: peg.parser,
+        passes: convertPasses(peg.compiler.passes)
+      };
+
+  arrays.each(plugins, function(p) { p.use(config, options); });
+
+  return peg.compiler.compile(
+    config.parser.parse(grammar),
+    config.passes,
+    options
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pegjs.parser.SyntaxError" id="apidoc.element.pegjs.parser.SyntaxError">
+        function <span class="apidocSignatureSpan">pegjs.</span>parser.SyntaxError
+        <span class="apidocSignatureSpan">(message, expected, found, location)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function peg$SyntaxError(message, expected, found, location) {
+  this.message  = message;
+  this.expected = expected;
+  this.found    = found;
+  this.location = location;
+  this.name     = &#x22;SyntaxError&#x22;;
+
+  if (typeof Error.captureStackTrace === &#x22;function&#x22;) {
+    Error.captureStackTrace(this, peg$SyntaxError);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pegjs.GrammarError" id="apidoc.module.pegjs.GrammarError">module pegjs.GrammarError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pegjs.GrammarError.GrammarError" id="apidoc.element.pegjs.GrammarError.GrammarError">
+        function <span class="apidocSignatureSpan">pegjs.</span>GrammarError
+        <span class="apidocSignatureSpan">(message, location)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GrammarError(message, location) {
+  this.name = &#x22;GrammarError&#x22;;
+  this.message = message;
+  this.location = location;
+
+  if (typeof Error.captureStackTrace === &#x22;function&#x22;) {
+    Error.captureStackTrace(this, GrammarError);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pegjs.GrammarError.prototype" id="apidoc.module.pegjs.GrammarError.prototype">module pegjs.GrammarError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pegjs.GrammarError.prototype.constructor" id="apidoc.element.pegjs.GrammarError.prototype.constructor">
+        function <span class="apidocSignatureSpan">pegjs.GrammarError.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(message, location)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GrammarError(message, location) {
+  this.name = &#x22;GrammarError&#x22;;
+  this.message = message;
+  this.location = location;
+
+  if (typeof Error.captureStackTrace === &#x22;function&#x22;) {
+    Error.captureStackTrace(this, GrammarError);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pegjs.compiler" id="apidoc.module.pegjs.compiler">module pegjs.compiler</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pegjs.compiler.compile" id="apidoc.element.pegjs.compiler.compile">
+        function <span class="apidocSignatureSpan">pegjs.compiler.</span>compile
+        <span class="apidocSignatureSpan">(ast, passes, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compile = function (ast, passes, options) {
+  options = options !== void 0 ? options : {};
+
+  var stage;
+
+  options = objects.clone(options);
+  objects.defaults(options, {
+    allowedStartRules: [ast.rules[0].name],
+    cache:             false,
+    dependencies:      {},
+    exportVar:         null,
+    format:            &#x22;bare&#x22;,
+    optimize:          &#x22;speed&#x22;,
+    output:            &#x22;parser&#x22;,
+    trace:             false
+  });
+
+  for (stage in passes) {
+    if (passes.hasOwnProperty(stage)) {
+      arrays.each(passes[stage], function(p) { p(ast, options); });
+    }
+  }
+
+  switch (options.output) {
+    case &#x22;parser&#x22;: return eval(ast.code);
+    case &#x22;source&#x22;: return ast.code;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pegjs.compiler.visitor" id="apidoc.module.pegjs.compiler.visitor">module pegjs.compiler.visitor</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pegjs.compiler.visitor.build" id="apidoc.element.pegjs.compiler.visitor.build">
+        function <span class="apidocSignatureSpan">pegjs.compiler.visitor.</span>build
+        <span class="apidocSignatureSpan">(functions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">build = function (functions) {
+  function visit(node) {
+    return functions[node.type].apply(null, arguments);
+  }
+
+  function visitNop() { }
+
+  function visitExpression(node) {
+    var extraArgs = Array.prototype.slice.call(arguments, 1);
+
+    visit.apply(null, [node.expression].concat(extraArgs));
+  }
+
+  function visitChildren(property) {
+    return function(node) {
+      var extraArgs = Array.prototype.slice.call(arguments, 1);
+
+      arrays.each(node[property], function(child) {
+        visit.apply(null, [child].concat(extraArgs));
+      });
+    };
+  }
+
+  var DEFAULT_FUNCTIONS = {
+        grammar: function(node) {
+          var extraArgs = Array.prototype.slice.call(arguments, 1);
+
+          if (node.initializer) {
+            visit.apply(null, [node.initializer].concat(extraArgs));
+          }
+
+          arrays.each(node.rules, function(rule) {
+            visit.apply(null, [rule].concat(extraArgs));
+          });
+        },
+
+        initializer:  visitNop,
+        rule:         visitExpression,
+        named:        visitExpression,
+        choice:       visitChildren(&#x22;alternatives&#x22;),
+        action:       visitExpression,
+        sequence:     visitChildren(&#x22;elements&#x22;),
+        labeled:      visitExpression,
+        text:         visitExpression,
+        simple_and:   visitExpression,
+        simple_not:   visitExpression,
+        optional:     visitExpression,
+        zero_or_more: visitExpression,
+        one_or_more:  visitExpression,
+        group:        visitExpression,
+        semantic_and: visitNop,
+        semantic_not: visitNop,
+        rule_ref:     visitNop,
+        literal:      visitNop,
+        &#x22;class&#x22;:      visitNop,
+        any:          visitNop
+      };
+
+  objects.defaults(functions, DEFAULT_FUNCTIONS);
+
+  return visit;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pegjs.parser" id="apidoc.module.pegjs.parser">module pegjs.parser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pegjs.parser.SyntaxError" id="apidoc.element.pegjs.parser.SyntaxError">
+        function <span class="apidocSignatureSpan">pegjs.parser.</span>SyntaxError
+        <span class="apidocSignatureSpan">(message, expected, found, location)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function peg$SyntaxError(message, expected, found, location) {
+  this.message  = message;
+  this.expected = expected;
+  this.found    = found;
+  this.location = location;
+  this.name     = &#x22;SyntaxError&#x22;;
+
+  if (typeof Error.captureStackTrace === &#x22;function&#x22;) {
+    Error.captureStackTrace(this, peg$SyntaxError);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pegjs.parser.parse" id="apidoc.element.pegjs.parser.parse">
+        function <span class="apidocSignatureSpan">pegjs.parser.</span>parse
+        <span class="apidocSignatureSpan">(input, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function peg$parse(input, options) {
+  options = options !== void 0 ? options : {};
+
+  var peg$FAILED = {},
+
+      peg$startRuleFunctions = { Grammar: peg$parseGrammar },
+      peg$startRuleFunction  = peg$parseGrammar,
+
+      peg$c0 = function(initializer, rules) {
+            return {
+              type:        &#x22;grammar&#x22;,
+              initializer: extractOptional(initializer, 0),
+              rules:       extractList(rules, 0),
+              location:    location()
+            };
+          },
+      peg$c1 = function(code) {
+            return { type: &#x22;initializer&#x22;, code: code, location: location() };
+          },
+      peg$c2 = &#x22;=&#x22;,
+      peg$c3 = peg$literalExpectation(&#x22;=&#x22;, false),
+      peg$c4 = function(name, displayName, expression) {
+            return {
+              type:        &#x22;rule&#x22;,
+              name:        name,
+              expression:  displayName !== null
+                ? {
+                    type:       &#x22;named&#x22;,
+                    name:       displayName[0],
+                    expression: expression,
+                    location:   location()
+                  }
+                : expression,
+              location:    location()
+            };
+          },
+      peg$c5 = &#x22;/&#x22;,
+      peg$c6 = peg$literalExpectation(&#x22;/&#x22;, false),
+      peg$c7 = function(head, tail) {
+            return tail.length &#x3e; 0
+              ? {
+                  type:         &#x22;choice&#x22;,
+                  alternatives: buildList(head, tail, 3),
+                  location:     location()
+                }
+              : head;
+          },
+      peg$c8 = function(expression, code) {
+            return code !== null
+              ? {
+                  type:       &#x22;action&#x22;,
+                  expression: expression,
+                  code:       code[1],
+                  location:   location()
+                }
+              : expression;
+          },
+      peg$c9 = function(head, tail) {
+            return tail.length &#x3e; 0
+              ? {
+                  type:     &#x22;sequence&#x22;,
+                  elements: buildList(head, tail, 1),
+                  location: location()
+                }
+              : head;
+          },
+      peg$c10 = &#x22;:&#x22;,
+      peg$c11 = peg$literalExpectation(&#x22;:&#x22;, false),
+      peg$c12 = function(label, expression) {
+            return {
+              type:       &#x22;labeled&#x22;,
+              label:      label,
+              expression: expression,
+              location:   location()
+            };
+          },
+      peg$c13 = function(operator, expression) {
+            return {
+              type:       OPS_TO_PREFIXED_TYPES[operator],
+              expression: expression,
+              location:   location()
+            };
+          },
+      peg$c14 = &#x22;$&#x22;,
+      peg$c15 = peg$literalExpectation(&#x22;$&#x22;, false),
+      peg$c16 = &#x22;&#x26;&#x22;,
+      peg$c17 = peg$literalExpectation(&#x22;&#x26;&#x22;, false),
+      peg$c18 = &#x22;!&#x22;,
+      peg$c19 = peg$literalExpectation(&#x22;!&#x22;, false),
+      peg$c20 = function(expression, operator) {
+            return {
+              type:       OPS_TO_SUFFIXED_TYPES[operator],
+              expression: expression,
+              location:   location()
+            };
+          },
+      peg$c21 = &#x22;?&#x22;,
+      peg$c22 = peg$literalExpectation(&#x22;?&#x22;, false),
+      peg$c23 = &#x22;*&#x22;,
+      peg$c24 = peg$literalExpectation(&#x22;*&#x22;, false),
+      peg$c25 = &#x22;+&#x22;,
+      peg$c26 = peg$literalExpectation(&#x22;+&#x22;, false),
+      peg$c27 = &#x22;(&#x22;,
+      peg$c28 = peg$literalExpectation(&#x22;(&#x22;, false),
+      peg$c29 = &#x22;)&#x22;,
+      peg$c30 = peg$literalExpectation(&#x22;)&#x22;, false),
+      peg$c31 = function(expression) {
+<span class="apidocCodeCommentSpan">            /*
+             * The purpose of the &#x22;group&#x22; AST node is just to isolate label scope. We
+             * don&#x27;t need to put it around nodes that can&#x27;t contain any labels or
+             * nodes that already isolate label scope themselves. This leaves us with
+             * &#x22;labeled&#x22; and &#x22;sequence&#x22;.
+             */
+</span>            return expression.type === &#x27;labeled&#x27; || expression.type === &#x27;sequence&#x27;
+                ? { type: &#x22;group&#x22;, expression: expression }
+                : expression;
+          },
+      peg$c32 = function(name) ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pegjs.parser.SyntaxError" id="apidoc.module.pegjs.parser.SyntaxError">module pegjs.parser.SyntaxError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pegjs.parser.SyntaxError.SyntaxError" id="apidoc.element.pegjs.parser.SyntaxError.SyntaxError">
+        function <span class="apidocSignatureSpan">pegjs.parser.</span>SyntaxError
+        <span class="apidocSignatureSpan">(message, expected, found, location)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function peg$SyntaxError(message, expected, found, location) {
+  this.message  = message;
+  this.expected = expected;
+  this.found    = found;
+  this.location = location;
+  this.name     = &#x22;SyntaxError&#x22;;
+
+  if (typeof Error.captureStackTrace === &#x22;function&#x22;) {
+    Error.captureStackTrace(this, peg$SyntaxError);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pegjs.parser.SyntaxError.buildMessage" id="apidoc.element.pegjs.parser.SyntaxError.buildMessage">
+        function <span class="apidocSignatureSpan">pegjs.parser.SyntaxError.</span>buildMessage
+        <span class="apidocSignatureSpan">(expected, found)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buildMessage = function (expected, found) {
+  var DESCRIBE_EXPECTATION_FNS = {
+        literal: function(expectation) {
+          return &#x22;\&#x22;&#x22; + literalEscape(expectation.text) + &#x22;\&#x22;&#x22;;
+        },
+
+        &#x22;class&#x22;: function(expectation) {
+          var escapedParts = &#x22;&#x22;,
+              i;
+
+          for (i = 0; i &#x3c; expectation.parts.length; i++) {
+            escapedParts += expectation.parts[i] instanceof Array
+              ? classEscape(expectation.parts[i][0]) + &#x22;-&#x22; + classEscape(expectation.parts[i][1])
+              : classEscape(expectation.parts[i]);
+          }
+
+          return &#x22;[&#x22; + (expectation.inverted ? &#x22;^&#x22; : &#x22;&#x22;) + escapedParts + &#x22;]&#x22;;
+        },
+
+        any: function(expectation) {
+          return &#x22;any character&#x22;;
+        },
+
+        end: function(expectation) {
+          return &#x22;end of input&#x22;;
+        },
+
+        other: function(expectation) {
+          return expectation.description;
+        }
+      };
+
+  function hex(ch) {
+    return ch.charCodeAt(0).toString(16).toUpperCase();
+  }
+
+  function literalEscape(s) {
+    return s
+      .replace(/\\/g, &#x27;\\\\&#x27;)
+      .replace(/&#x22;/g,  &#x27;\\&#x22;&#x27;)
+      .replace(/\0/g, &#x27;\\0&#x27;)
+      .replace(/\t/g, &#x27;\\t&#x27;)
+      .replace(/\n/g, &#x27;\\n&#x27;)
+      .replace(/\r/g, &#x27;\\r&#x27;)
+      .replace(/[\x00-\x0F]/g,          function(ch) { return &#x27;\\x0&#x27; + hex(ch); })
+      .replace(/[\x10-\x1F\x7F-\x9F]/g, function(ch) { return &#x27;\\x&#x27;  + hex(ch); });
+  }
+
+  function classEscape(s) {
+    return s
+      .replace(/\\/g, &#x27;\\\\&#x27;)
+      .replace(/\]/g, &#x27;\\]&#x27;)
+      .replace(/\^/g, &#x27;\\^&#x27;)
+      .replace(/-/g,  &#x27;\\-&#x27;)
+      .replace(/\0/g, &#x27;\\0&#x27;)
+      .replace(/\t/g, &#x27;\\t&#x27;)
+      .replace(/\n/g, &#x27;\\n&#x27;)
+      .replace(/\r/g, &#x27;\\r&#x27;)
+      .replace(/[\x00-\x0F]/g,          function(ch) { return &#x27;\\x0&#x27; + hex(ch); })
+      .replace(/[\x10-\x1F\x7F-\x9F]/g, function(ch) { return &#x27;\\x&#x27;  + hex(ch); });
+  }
+
+  function describeExpectation(expectation) {
+    return DESCRIBE_EXPECTATION_FNS[expectation.type](expectation);
+  }
+
+  function describeExpected(expected) {
+    var descriptions = new Array(expected.length),
+        i, j;
+
+    for (i = 0; i &#x3c; expected.length; i++) {
+      descriptions[i] = describeExpectation(expected[i]);
+    }
+
+    descriptions.sort();
+
+    if (descriptions.length &#x3e; 0) {
+      for (i = 1, j = 1; i &#x3c; descriptions.length; i++) {
+        if (descriptions[i - 1] !== descriptions[i]) {
+          descriptions[j] = descriptions[i];
+          j++;
+        }
+      }
+      descriptions.length = j;
+    }
+
+    switch (descriptions.length) {
+      case 1:
+        return descriptions[0];
+
+      case 2:
+        return descriptions[0] + &#x22; or &#x22; + descriptions[1];
+
+      default:
+        return descriptions.slice(0, -1).join(&#x22;, &#x22;)
+          + &#x22;, or &#x22;
+          + descriptions[descriptions.length - 1];
+    }
+  }
+
+  function describeFound(found) {
+    return found ? &#x22;\&#x22;&#x22; + literalEscape(found) + &#x22;\&#x22;&#x22; : &#x22;end of input&#x22;;
+  }
+
+  return &#x22;Expected &#x22; + describeExpected(expected) + &#x22; but &#x22; + describeFound(found) + &#x22; found.&#x22;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pegjs.parser.SyntaxError.prototype" id="apidoc.module.pegjs.parser.SyntaxError.prototype">module pegjs.parser.SyntaxError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pegjs.parser.SyntaxError.prototype.constructor" id="apidoc.element.pegjs.parser.SyntaxError.prototype.constructor">
+        function <span class="apidocSignatureSpan">pegjs.parser.SyntaxError.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(message, expected, found, location)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function peg$SyntaxError(message, expected, found, location) {
+  this.message  = message;
+  this.expected = expected;
+  this.found    = found;
+  this.location = location;
+  this.name     = &#x22;SyntaxError&#x22;;
+
+  if (typeof Error.captureStackTrace === &#x22;function&#x22;) {
+    Error.captureStackTrace(this, peg$SyntaxError);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
